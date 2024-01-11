@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  getAllItemsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/get-all-items.getAllItemsHandler
+      Runtime: nodejs12.x
+      Events:
+        Api:
+          Type: HttpApi
+          Properties:
+            Path: /
+            Method: GET
+    Connectors:
+      MyConn:
+        Properties:
+        Destination:
+          Id: SampleTable
+          Permissions:
+            - Read
+  SampleTable:
+    Type: AWS::Serverless::SimpleTable
