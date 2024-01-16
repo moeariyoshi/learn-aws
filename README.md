@@ -3,6 +3,7 @@
 See Terraform also: https://github.com/moeariyoshi/learn-terraform
 
 ## Setting up AWS CLI
+https://docs.aws.amazon.com/cli/latest/userguide/cli-services-iam.html
 
 ### Create User Group
 ```
